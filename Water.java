@@ -3,21 +3,21 @@
 */
 
 import java.util.Scanner;
-public class Water
-{
-   public static void main(String[] args)
-{
-      Scanner input = new Scanner(System.in);
-      System.out.print("Enter the amount of water in kilograms: ");
+
+public class Water {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter the amount of water in kilograms (kg): ");
       
-      double kilograms = input.nextDouble();
-      System.out.print("Enter the initial temperature: ");
-      double initialTemperature = input.nextDouble();
-      System.out.print("Enter the final temperature: ");
-      double finalTemperature = input.nextDouble();
+        double kilograms = input.nextDouble();
+        System.out.print("Enter the initial temperature in degrees Celsius (°C): ");
+        double initialTemperature = input.nextDouble();
+        System.out.print("Enter the final temperature in degrees Celsius (°C): ");
+        double finalTemperature = input.nextDouble();
       
-      double energy = kilograms * (finalTemperature - initialTemperature) * 4184;
+        final double SPECIFIC_HEAT_CAPACITY = 4184; // J/(kg·°C)
+        double energy = kilograms * (finalTemperature - initialTemperature) * SPECIFIC_HEAT_CAPACITY;
       
-      System.out.println("The energy needed is " + energy);
-   }
+        System.out.println("The energy needed is " + energy + " joules (J)");
+    }
 }
